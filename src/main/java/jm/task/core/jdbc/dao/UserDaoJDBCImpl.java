@@ -7,16 +7,16 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/*public class UserDaoJDBCImpl implements UserDao {
+public class UserDaoJDBCImpl implements UserDao {
     public UserDaoJDBCImpl() {
 
     }
 
     public void createUsersTable() {
-        /String res = "CREATE TABLE IF NOT EXISTS user " +
+        String res = "CREATE TABLE IF NOT EXISTS user " +
                 "(id BIGINT PRIMARY KEY AUTO_INCREMENT, firstName CHAR(40), lastName CHAR(40), age TINYINT)";
-        try(final Connection connection = Util.getConnection();
-            Statement statement = connection.createStatement()) {
+        try (final Connection connection = Util.getConnection();
+             Statement statement = connection.createStatement()) {
             statement.execute(res);
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -25,8 +25,8 @@ import java.util.List;
 
     public void dropUsersTable() {
         String res = "DROP TABLE IF EXISTS user";
-        try(final Connection connection = Util.getConnection();
-            Statement statement = connection.createStatement()) {
+        try (final Connection connection = Util.getConnection();
+             Statement statement = connection.createStatement()) {
             statement.execute(res);
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -63,7 +63,7 @@ import java.util.List;
         try (Connection connection = Util.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(res)) {
             ResultSet result = preparedStatement.executeQuery();
-            while(result.next()) {
+            while (result.next()) {
                 User user = new User();
                 user.setId(result.getLong("id"));
                 user.setName(result.getString("firstName"));
@@ -87,4 +87,4 @@ import java.util.List;
         }
 
     }
-}*/
+}
