@@ -14,8 +14,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Util {
-    private static SessionFactory sessionFactory;
-    private static StandardServiceRegistry registry;
 
     public static SessionFactory getSessionFactory() {
         SessionFactory sessionFactory = new Configuration().addAnnotatedClass(User.class).buildSessionFactory();
